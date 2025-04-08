@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Chest X-Ray Analysis</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bg-animated {
+      animation: floatBg 5s ease-in-out infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes floatBg {
+      0% { transform: translateY(0); opacity: 0.4; }
+      50% { transform: translateY(-10px); opacity: 0.6; }
+      100% { transform: translateY(0); opacity: 0.4; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-70"></div>
+      <div
+        class="absolute inset-0 bg-animated bg-cover bg-center"
+        style="background-image: url('https://ik.imagekit.io/sri/tr:w-900:w-900,h-400,cm-extract,x-0,y-35,cwidth-900/image/1-e3f9e7f3-9527-da47-1ec9-348b02453a8e.jpg');">
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center fade-in-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">AI-Powered Chest X-Ray Analysis</h1>
+      <p class="text-xl text-gray-600 mb-8">Get instant, accurate diagnostic reports powered by advanced AI technology</p>
+      <a href="/generator"
+        class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+        Try Now
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white fade-in-up">
+    <div class="max-w-7xl mx-auto px-4 text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Advanced Features</h2>
+      <p class="mt-4 text-xl text-gray-600">Comprehensive analysis powered by cutting-edge AI technology</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 max-w-7xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-full mb-4">
+          <i data-lucide="file-check" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Automated Report Generation</h3>
+        <p class="text-gray-600">Generates detailed radiology reports from chest X-ray images using a conditioned GPT-2 model.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-full mb-4">
+          <i data-lucide="settings" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Visual Feature Extraction</h3>
+        <p class="text-gray-600">Utilizes pre-trained models like CheXNet to extract essential features from X-ray images.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-full mb-4">
+          <i data-lucide="brain" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Conditioned Text Generation</h3>
+        <p class="text-gray-600">Integrates image semantics with GPT-2 to produce coherent and contextually accurate reports.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-full mb-4">
+          <i data-lucide="arrow-right" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Dataset-Driven Training</h3>
+        <p class="text-gray-600">Leverages the IU-Xray dataset for training, ensuring relevance and accuracy in generated reports.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50 fade-in-up">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">What Medical Professionals Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <p class="text-lg text-gray-600 mb-4">"This tool has revolutionized our radiology department's workflow."</p>
+          <div>
+            <p class="font-semibold text-gray-900">Dr. Sarah Chen</p>
+            <p class="text-gray-600">Chief Radiologist</p>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <p class="text-lg text-gray-600 mb-4">"The accuracy and speed of the AI analysis is remarkable."</p>
+          <div>
+            <p class="font-semibold text-gray-900">Dr. Michael Roberts</p>
+            <p class="text-gray-600">Emergency Medicine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Intersection observer for fade-in animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // Load lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

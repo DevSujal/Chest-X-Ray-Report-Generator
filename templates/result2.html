@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detailed AI Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen font-sans text-gray-800">
+
+  <section class="py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-3 tracking-tight drop-shadow-md">AI X-Ray Detailed Report</h1>
+      <p class="text-gray-600 text-lg mb-10">Below is your AI-generated caption, extracted clinical terms, and the expanded detailed report.</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-2xl mt-10 relative">
+    {% if image_path %}
+    <div class="relative bg-black rounded-xl overflow-hidden mb-6">
+      <img src="{{ image_path }}" alt="Uploaded X-ray" class="w-full max-w-md mx-auto opacity-90 rounded-lg shadow-lg" id="xrayImage">
+    </div>
+    {% endif %}
+
+    <div class="animate-fadeIn">
+      <p class="text-sm text-gray-500 mb-2 italic">{{ now }}</p>
+      <p class="text-sm text-gray-700 mb-4">
+        <span class="font-semibold">Name:</span> {{ name }} &nbsp; 
+        <span class="font-semibold">Age:</span> {{ age }}
+      </p>
+      <h3 class="text-xl font-semibold text-blue-700 mt-4 mb-2">AI Caption</h3>
+      <pre class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl text-gray-800 whitespace-pre-wrap shadow-inner leading-relaxed">{{ caption }}</pre>
+
+      <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2">Extracted Clinical Terms</h3>
+      <pre class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl text-green-900 whitespace-pre-wrap shadow-inner leading-relaxed">{{ clinical_terms }}</pre>
+
+      <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2">Detailed Report</h3>
+      <pre class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl text-gray-900 whitespace-pre-wrap shadow-inner leading-relaxed">{{ detailed_report }}</pre>
+
+      <a href="/download-report?image={{ image_path|urlencode }}&report={{ caption|urlencode }}&now={{ now|urlencode }}&detailed_report={{ detailed_report|urlencode }}&clinical_terms={{ clinical_terms|urlencode }}&name={{ name|urlencode }}&age={{ age|urlencode }}"
+         class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-xl shadow hover:bg-blue-700 hover:shadow-md transition transform hover:scale-105">
+        Download Report as PDF
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>

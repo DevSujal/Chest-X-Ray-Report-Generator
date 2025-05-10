@@ -9,8 +9,8 @@
 
   <section class="py-12">
     <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-5xl font-extrabold text-gray-900 mb-3 tracking-tight drop-shadow-md">AI X-Ray Detailed Report</h1>
-      <p class="text-gray-600 text-lg mb-10">Below is your AI-generated caption, extracted clinical terms, and the expanded detailed report.</p>
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-3 tracking-tight drop-shadow-md">ScanSure : Chest X-Ray Report Generator</h1>
+      <p class="text-gray-600 text-lg mb-10">Below is your AI-generated generated report, extracted clinical terms, and the detailed report.</p>
     </div>
   </section>
 
@@ -27,10 +27,10 @@
         <span class="font-semibold">Name:</span> {{ name }} &nbsp; 
         <span class="font-semibold">Age:</span> {{ age }}
       </p>
-      <h3 class="text-xl font-semibold text-blue-700 mt-4 mb-2">AI Caption</h3>
+      <h3 class="text-xl font-semibold text-blue-700 mt-4 mb-2">Findings</h3>
       <pre class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl text-gray-800 whitespace-pre-wrap shadow-inner leading-relaxed">{{ caption }}</pre>
 
-      <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2">Extracted Clinical Terms</h3>
+      <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2">Labels</h3>
       <pre class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl text-green-900 whitespace-pre-wrap shadow-inner leading-relaxed">{{ clinical_terms }}</pre>
 
       <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2">Detailed Report</h3>

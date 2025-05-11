@@ -149,12 +149,6 @@ PRs and suggestions are welcome. This is both an academic and learning project.
 
 ---
 
-## 📬 Contact
-
-Have questions or ideas?  
-Reach out via your-email@example.com
-
-Made with 🧠 + ❤️ for AI and Healthcare.
 
 ```
 

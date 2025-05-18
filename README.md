@@ -11,7 +11,8 @@ The main functionality of the app is to **generate AI-powered diagnostic reports
 - Real-time "Scanning"  
 - Stylish and responsive Tailwind CSS UI  
 - Download generated reports as PDF  
-- BLEU-score-based evaluation for model accuracy  
+- BLEU-score-based evaluation for model accuracy
+- LSTM +GPT-2 decoder architecture for enhanced medical language generation and context-aware reporting
 
 ---
 

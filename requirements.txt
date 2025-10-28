@@ -19,3 +19,5 @@ transformers
 google-generativeai
 python-dotenv
 huggingface-hub
+torch-geometric
+networkx

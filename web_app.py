@@ -444,19 +444,19 @@ def generator():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             
-            # SECURITY LAYER: Verify if image is a chest X-ray
-            is_valid, verification_message = verify_xray_image(file)
+            # # SECURITY LAYER: Verify if image is a chest X-ray
+            # is_valid, verification_message = verify_xray_image(file)
             
-            if not is_valid:
-                print(f"🚫 Image validation failed: {verification_message}")
-                return render_template(
-                    "error.html",
-                    error_message=verification_message,
-                    name=name,
-                    age=age
-                )
+            # if not is_valid:
+            #     print(f"🚫 Image validation failed: {verification_message}")
+            #     return render_template(
+            #         "error.html",
+            #         error_message=verification_message,
+            #         name=name,
+            #         age=age
+            #     )
             
-            print(f"✅ Image validation passed: {verification_message}")
+            # print(f"✅ Image validation passed: {verification_message}")
             
             # Process the validated image
             image_tensor = process_image(file)

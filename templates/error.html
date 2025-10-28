@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invalid Image - AI Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-red-50 to-orange-100 min-h-screen font-sans text-gray-800">
+
+  <section class="py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="bg-white p-10 rounded-2xl shadow-2xl">
+        
+        <!-- Error Icon -->
+        <div class="mb-6">
+          <svg class="mx-auto h-24 w-24 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+
+        <!-- Error Title -->
+        <h1 class="text-4xl font-extrabold text-red-600 mb-4 tracking-tight">⚠️ Invalid Image</h1>
+        
+        <!-- Error Message -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-6 rounded-lg">
+          <p class="text-lg text-gray-700 mb-3">
+            <strong class="text-red-700">The uploaded image is not a valid chest X-ray.</strong>
+          </p>
+          <p class="text-gray-600 text-sm">
+            {{ error_message }}
+          </p>
+        </div>
+
+        <!-- Instructions -->
+        <div class="text-left bg-blue-50 p-6 rounded-lg mb-6">
+          <h2 class="text-xl font-bold text-blue-900 mb-3">📋 Please ensure your image:</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Is a medical chest X-ray (radiograph)</li>
+            <li>Shows the thoracic cavity including lungs and heart</li>
+            <li>Is in proper radiographic format (frontal or lateral view)</li>
+            <li>Is not a CT scan, MRI, or other type of medical scan</li>
+            <li>Is not an X-ray of other body parts</li>
+            <li>Has good image quality and proper orientation</li>
+          </ul>
+        </div>
+
+        <!-- Patient Info (if provided) -->
+        {% if name or age %}
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+          <p class="text-sm text-gray-600">
+            Patient: <strong>{{ name }}</strong> 
+            {% if age %}| Age: <strong>{{ age }}</strong>{% endif %}
+          </p>
+        </div>
+        {% endif %}
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4 justify-center">
+          <a href="/" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition transform hover:scale-105 shadow-lg">
+            ← Try Again
+          </a>
+          <a href="/" class="px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition">
+            Go to Home
+          </a>
+        </div>
+
+        <!-- Additional Help -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <p class="text-sm text-gray-500">
+            Need help? Make sure you're uploading a genuine chest X-ray image in JPG, PNG, or JPEG format.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

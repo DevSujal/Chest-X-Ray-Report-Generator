@@ -2,3 +2,7 @@ __pycache__
 .idea
 checkpoints
 dataset
+venv
+dataset
+.env
+static
